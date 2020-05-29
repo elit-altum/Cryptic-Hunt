@@ -35,6 +35,24 @@ exports.getQuestion = catchAsync(async (req, res, next) => {
 	});
 });
 
+// 01A. Get Question for view controller
+exports.getViewQuestion = async (req) => {
+	const questionObject = {};
+	if (req.user.level + 1 > (await getTotalQuestions())) {
+		questionObject.completed = true;
+		return questionObject;
+	}
+
+	const question = await Question.findOne({ level: req.user.level });
+
+	if (!question) {
+		questionObject.completed = true;
+		return questionObject;
+	}
+
+	return question;
+};
+
 // 02. Checks user answer for its level
 exports.checkAnswer = catchAsync(async (req, res, next) => {
 	const { level, username } = req.user;

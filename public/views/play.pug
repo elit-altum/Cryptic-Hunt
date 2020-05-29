@@ -1,0 +1,18 @@
+extends base
+
+block content 
+  if question.completed
+    h2 Congratulations!
+  else 
+    h3 Level #{question.level}
+    h4= question.problem
+    p.hint Hint:  #{question.hint}
+
+    form.question-form
+      label.login-form__username Answer
+      input#answer(type='text' name='answer' placeholder='Your answer here!' required)
+
+      button(class="btn waves-effect waves-light" type="submit" name="action") Submit
+
+block append scripts
+  script(src="/js/submitQuestion.js")

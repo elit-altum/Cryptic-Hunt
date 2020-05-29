@@ -90,6 +90,7 @@ exports.protect = catchAsync(async (req, res, next) => {
 	}
 
 	req.user = user;
+	res.locals.user = user;
 	next();
 });
 
@@ -103,5 +104,16 @@ exports.restrictTo = (...roles) => {
 			);
 		}
 		next();
+	});
+};
+
+// 5. Logout uses
+exports.logout = (req, res, next) => {
+	res.cookie("jwt", "loggedout", {
+		expires: new Date(Date.now() + 10 * 1000),
+	});
+
+	res.status(200).json({
+		status: "success",
 	});
 };

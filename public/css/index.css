@@ -3,6 +3,7 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  font-family: "Montserrat";
 }
 
 .nav__top {
@@ -43,7 +44,68 @@
   text-decoration: none;
   text-transform: uppercase;
   font-size: 16px;
-  font-family: Helvetica, Arial, sans-serif;
   margin-left: 40px;
+}
+
+#content-area {
+  width: 100vw;
+  height: 92vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#content-area h1 {
+  margin-bottom: 40px;
+  font-size: 35px;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.login-form {
+  padding: 20px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0 4px #999;
+          box-shadow: 0 0 4px #999;
+}
+
+.login-form button {
+  margin-top: 30px;
+}
+
+.error-toast {
+  background-color: #c62828;
+  font-weight: 400;
+}
+
+.success-toast {
+  background-color: #388e3c;
+  font-weight: 400;
+}
+
+.question-form {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.question-form button {
+  margin-top: 30px;
+  background-color: #222;
+}
+
+.hint {
+  font-style: italic;
+  font-size: 17px;
+  margin-top: 20px;
 }
 /*# sourceMappingURL=index.css.map */

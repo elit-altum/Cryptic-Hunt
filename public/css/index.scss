@@ -7,6 +7,7 @@ $secondary-color: #222;
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	font-family: "Montserrat";
 }
 
 .nav__top {
@@ -35,8 +36,58 @@ $secondary-color: #222;
 			text-decoration: none;
 			text-transform: uppercase;
 			font-size: 16px;
-			font-family: Helvetica, Arial, sans-serif;
 			margin-left: 40px;
 		}
 	}
+}
+
+#content-area {
+	width: 100vw;
+	height: 92vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	h1 {
+		margin-bottom: 40px;
+		font-size: 35px;
+		text-transform: uppercase;
+		font-weight: 800;
+	}
+}
+
+.login-form {
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0 0 4px #999;
+
+	button {
+		margin-top: 30px;
+	}
+}
+
+.error-toast {
+	background-color: #c62828;
+	font-weight: 400;
+}
+
+.success-toast {
+	background-color: #388e3c;
+	font-weight: 400;
+}
+
+.question-form {
+	text-align: center;
+	margin-top: 40px;
+	button {
+		margin-top: 30px;
+		background-color: $secondary-color;
+	}
+}
+
+.hint {
+	font-style: italic;
+	font-size: 17px;
+	margin-top: 20px;
 }

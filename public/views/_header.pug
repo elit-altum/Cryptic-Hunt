@@ -3,6 +3,7 @@ header
     img.nav__top--logo(src="/img/my-logo.png")
     ul.nav__top--list
       li: a(href="#") Dashboard
-      li: a(href="#") Play
-      li: a(href="#") User-Name
+      li: a(href="/play") Play
+      if user 
+        li: .logout(onclick='logoutUser()')= user.username
 
