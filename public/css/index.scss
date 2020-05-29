@@ -41,6 +41,15 @@ $secondary-color: #222;
 	}
 }
 
+.logout {
+	color: $primary-color;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 16px;
+	margin-left: 40px;
+	cursor: pointer;
+}
+
 #content-area {
 	width: 100vw;
 	height: 92vh;
@@ -90,4 +99,17 @@ $secondary-color: #222;
 	font-style: italic;
 	font-size: 17px;
 	margin-top: 20px;
+}
+
+.leaderboard {
+	margin: 20px 40px;
+}
+
+tr {
+	font-size: 18px;
+}
+
+td {
+	font-size: 14px;
+	color: #666;
 }

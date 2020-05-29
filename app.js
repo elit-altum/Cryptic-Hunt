@@ -10,6 +10,8 @@ const questionsRouter = require("./routes/questionsRouter");
 const playRouter = require("./routes/playRouter");
 const viewRouter = require("./routes/viewRouter");
 
+const AppError = require("./utils/appError");
+
 const errHandler = require("./utils/errorHandler");
 
 const app = express();
@@ -44,10 +46,7 @@ app.use("/api/v1/play", playRouter);
 app.use("/", viewRouter);
 
 app.all("*", (req, res) => {
-	res.status(404).json({
-		status: "fail",
-		message: "This route does not exist!",
-	});
+	throw new AppError("This page does not exist on the server!", 404);
 });
 
 // Error handler

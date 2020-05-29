@@ -110,3 +110,10 @@ exports.getDashboard = catchAsync(async (req, res, next) => {
 		},
 	});
 });
+
+// 03A. Get the game dashboard
+exports.getDashboardView = async (req, res, next) => {
+	const users = await User.find().sort("-level lastSolved");
+
+	return users;
+};

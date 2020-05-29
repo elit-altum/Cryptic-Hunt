@@ -8,10 +8,4 @@ router.route("/login").post(userController.loginUser);
 
 router.route("/logout").get(userController.protect, userController.logout);
 
-// router
-// 	.route("/check")
-// 	.get(userController.protect, userController.restrictTo("admin"), (req, res) =>
-// 		res.send("Good")
-// 	);
-
 module.exports = router;

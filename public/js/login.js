@@ -12,7 +12,7 @@ const loginUser = async (username, password) => {
 			},
 		});
 		M.toast({
-			html: `Welcome to the cypher ${res.data.data.user.username}. You will be redirected to the question.`,
+			html: `Welcome to cypher. You will be redirected soon.`,
 			classes: "success-toast",
 		});
 		setTimeout(() => {

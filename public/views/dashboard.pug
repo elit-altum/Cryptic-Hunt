@@ -1,0 +1,19 @@
+extends base
+
+mixin tableElement(rank, name, level)
+  tr
+    td= rank
+    td= name
+    td= level
+
+block content 
+  h1 DASHBOARD
+  table(class="striped responsive-table centered leaderboard")
+    thead
+      tr
+        th Rank
+        th Name
+        th Level
+    tbody
+      each user, index in users
+        +tableElement(`${index + 1}`, user.username, user.level)

@@ -21,3 +21,9 @@ const logoutUser = async () => {
 		});
 	}
 };
+
+const checkLogout = () => {
+	const toastHTML =
+		'<span>Logout?</span><button class="btn-flat toast-action" onclick="logoutUser()">Logout</button>';
+	M.toast({ html: toastHTML });
+};
