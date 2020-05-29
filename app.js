@@ -1,6 +1,8 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cookieParser = require("cookie-parser");
+const helmet = require("helmet");
+const xss = require("xss-clean");
 
 const userRouter = require("./routes/userRouter");
 const questionsRouter = require("./routes/questionsRouter");
@@ -23,6 +25,9 @@ mongoose
 	.catch((err) => {
 		console.log(err);
 	});
+
+app.use(helmet());
+app.use(xss());
 
 app.use(express.json());
 app.use(cookieParser());

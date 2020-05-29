@@ -14,7 +14,7 @@ const getTotalQuestions = async () => {
 // 01. Gets question for the user based on its current level
 exports.getQuestion = catchAsync(async (req, res, next) => {
 	// If user has completed the quiz
-	if (req.user.level >= (await getTotalQuestions())) {
+	if (req.user.level + 1 >= (await getTotalQuestions())) {
 		return res.status(200).json({
 			status: "success",
 			message: "Congratulations you have completed cypher!",
@@ -55,8 +55,15 @@ exports.checkAnswer = catchAsync(async (req, res, next) => {
 	}
 
 	if (question.level + 1 >= (await getTotalQuestions())) {
+		const newLevel = question.level + 1;
+
+		await User.findByIdAndUpdate(req.user._id, {
+			level: newLevel,
+			lastSolved: Date.now(),
+		});
+
 		return res.status(200).json({
-			status: "sucess",
+			status: "success",
 			message: "Congratulations you have completed cypher!",
 		});
 	}
