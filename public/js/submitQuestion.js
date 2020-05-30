@@ -11,7 +11,7 @@ const submitAnswer = async (answer) => {
 			},
 		});
 		M.toast({
-			html: `${res.data.message}.`,
+			html: `${res.data.message}`,
 			classes: "success-toast",
 		});
 		setTimeout(() => {
@@ -20,6 +20,7 @@ const submitAnswer = async (answer) => {
 	} catch (err) {
 		M.toast({ html: `${err.response.data.message}`, classes: "error-toast" });
 	}
+	document.getElementById("answer").value = "";
 };
 
 if (questionForm) {

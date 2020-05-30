@@ -94,7 +94,7 @@ exports.protect = catchAsync(async (req, res, next) => {
 	next();
 });
 
-// 3. Auth middleware for protected routes
+// 3A. Auth middleware to just check if user is logged in or not for informing the views about it.
 exports.isLoggedIn = catchAsync(async (req, res, next) => {
 	let token = "";
 	if (
@@ -107,7 +107,7 @@ exports.isLoggedIn = catchAsync(async (req, res, next) => {
 	}
 
 	if (!token) {
-		throw new AppError("Please login to access!", 400);
+		return next();
 	}
 
 	const payload = await util.promisify(jwt.verify)(
@@ -117,10 +117,9 @@ exports.isLoggedIn = catchAsync(async (req, res, next) => {
 
 	const user = await User.findById(payload.id);
 	if (!user) {
-		throw new AppError("This user does not exist.", 404);
+		return next();
 	}
 
-	req.user = user;
 	res.locals.user = user;
 	next();
 });
@@ -141,7 +140,7 @@ exports.restrictTo = (...roles) => {
 // 5. Logout uses
 exports.logout = (req, res, next) => {
 	res.cookie("jwt", "loggedout", {
-		expires: new Date(Date.now() + 10 * 1000),
+		expires: new Date(Date.now() + 10),
 	});
 
 	res.status(200).json({

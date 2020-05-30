@@ -21,8 +21,9 @@
 }
 
 .nav__top--logo {
-  height: 60px;
   margin-left: 40px;
+  font-size: 20px;
+  text-transform: uppercase;
 }
 
 .nav__top--list {
@@ -90,6 +91,11 @@
 
 .login-form button {
   margin-top: 30px;
+  background-color: #484848;
+}
+
+.login-form button:hover {
+  background-color: #222;
 }
 
 .error-toast {
@@ -129,5 +135,15 @@ tr {
 td {
   font-size: 14px;
   color: #666;
+}
+
+.home-cta {
+  background-color: #484848;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.home-cta:hover {
+  background-color: #222;
 }
 /*# sourceMappingURL=index.css.map */

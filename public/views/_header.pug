@@ -1,8 +1,8 @@
 header
   nav.nav__top
-    img.nav__top--logo(src="/img/my-logo.png")
+    a.nav__top--logo(href="/") cypher
     ul.nav__top--list
-      li: a(href="/dashboard") Dashboard
+      li: a(href="/leaderboard") Leaderboard
       if user
         li: a(href="/play") Play 
         li: .logout(onclick='checkLogout()')= user.username

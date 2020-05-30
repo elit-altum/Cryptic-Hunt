@@ -19,8 +19,9 @@ $secondary-color: #222;
 }
 
 .nav__top--logo {
-	height: 60px;
 	margin-left: 40px;
+	font-size: 20px;
+	text-transform: uppercase;
 }
 
 .nav__top--list {
@@ -73,6 +74,10 @@ $secondary-color: #222;
 
 	button {
 		margin-top: 30px;
+		background-color: lighten($secondary-color, 15%);
+		&:hover {
+			background-color: $secondary-color;
+		}
 	}
 }
 
@@ -112,4 +117,12 @@ tr {
 td {
 	font-size: 14px;
 	color: #666;
+}
+
+.home-cta {
+	background-color: lighten($secondary-color, 15%);
+	box-shadow: none;
+	&:hover {
+		background-color: $secondary-color;
+	}
 }
