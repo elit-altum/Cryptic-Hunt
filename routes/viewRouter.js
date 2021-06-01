@@ -43,4 +43,10 @@ router.get("/play", async (req, res) => {
 	});
 });
 
+router.get("/newQuestion", async (req, res) => {
+	res.status(200).render("addQuestion", {
+		title: "New Question",
+	});
+});
+
 module.exports = router;

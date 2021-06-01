@@ -1,0 +1,22 @@
+extends base
+
+block content
+  h1 New Question
+  .login-form
+    form
+      label.login-form__username Problem Statement
+      input#statement(type='text' name='problem' placeholder='State the question' required)
+
+      label.login-form__username Answer 
+      input#answer(type='text' name='answer' placeholder='All Lowercase' required)
+
+      label.login-form__username Hint
+      input#hint(type='text' name='hint' placeholder='Help the contestants out' required)
+
+      label.login-form__username Level Number
+      input#level(type='text' name='level' placeholder='Problem level number' required)
+
+      button(class="btn waves-effect waves-light" type="submit" name="action") Submit
+
+block append scripts
+  script(src="/js/newQuestion.js")
