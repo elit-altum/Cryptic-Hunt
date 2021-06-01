@@ -10,6 +10,12 @@ router.get("/login", (req, res) => {
 	});
 });
 
+router.get("/signupAdmin", (req, res) => {
+	res.status(200).render("signup", {
+		title: "Sign Up",
+	});
+});
+
 // Just to check if user is logged in or not so that the header can render accordingly
 router.use(userController.isLoggedIn);
 
