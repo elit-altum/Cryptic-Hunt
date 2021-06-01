@@ -29,32 +29,5 @@ Built with:
 - Do provide the ```config.env``` variables as heroku environment variables as well.
 
 ### 2. Creating an admin
-- Create/register a new user for yourself using the frontend
-- Access this user document on the Mongo cluster on the users collection of the database. It should match the format of the schema.
-```
-username: {
-		type: String,
-		required: true,
-		unique: [true, "This username is already taken!"],
-	},
-	password: {
-		type: String,
-		required: true,
-		minlength: [8, "Please have atleast 8 characters!"],
-		select: false,
-	},
-	role: {
-		type: String,
-		enum: ["user", "admin"],
-		default: "user",
-	},
-	level: {
-		type: Number,
-		default: 0,
-	},
-	lastSolved: {
-		type: Date,
-		default: Date.now(),
-	},
-```
-and make sure you set the ```role``` value as "admin"
+- Create/register a new user for yourself using the frontend using the ```/signupAdmin``` route.
+- Access this user document on the Mongo cluster on the users collection of the database and make sure you set the ```role``` value as "admin" to grant you admin privileges.
